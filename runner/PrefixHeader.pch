@@ -1,0 +1,64 @@
+//
+//  PrefixHeader.pch
+//  runner
+//
+//  Created by runner on 2019/9/3.
+//  Copyright © 2019 com.runner.www. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import <UIKit/UIFeedbackGenerator.h>
+
+/*
+ UIImpactFeedbackGenerator *feedBackGenertor = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleLight];
+ [feedBackGenertor impactOccurred];
+ */
+
+#import "LKColor.h"
+#import "LKViewFormat.h"
+#import "LKNav.h"
+#import "LKLoadingView.h"
+#import "LKButton.h"
+#import "LKCountDown.h"
+#import "LKRollView.h"
+#import "LKSwiper.h"
+#import "Chart.h"
+#import "LKClickView.h"
+#import "LKItemSelect.h"
+
+
+//lib
+#import <ReactiveObjC.h>
+#import <MJRefresh.h>
+#import <SDWebImage.h>
+#import <IQKeyboardManager.h>
+#import <Masonry.h>
+
+#import "UserLoginInfo.h"
+
+#import "NetWork.h"
+#import "NetAPI.h"
+#import "Func.h"
+#import "DateFormat.h"
+#import "JSONData.h"
+#import "DefineDoc.h"
+#import "Regex.h"
+
+//define
+#import "ColorDefine.h"
+
+//view
+#import "LKAddressViewController.h"
+#import "PlaceHolderCell.h"
+#import "BottomView.h"
+#import "LightLKButton.h"
+#import "DeepLKButton.h"
+#import "SuccessPage.h"
+#import "PwdView.h"
+#import "PasswordPage.h"
+
+
+
+#endif /* PrefixHeader_pch */

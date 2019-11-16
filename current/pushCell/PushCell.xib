@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="PushCell">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="昵称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHf-Xe-UWK">
+                        <rect key="frame" x="16" y="13.5" width="29" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="current-push-gray" translatesAutoresizingMaskIntoConstraints="NO" id="Le7-CL-2TB">
+                        <rect key="frame" x="390" y="15.5" width="8" height="13"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="8" id="8dD-tD-VWC"/>
+                            <constraint firstAttribute="height" constant="13" id="TO3-Qf-5Tn"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="jarry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tol-I8-Zak">
+                        <rect key="frame" x="353" y="13.5" width="29" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="60d-yF-Cig">
+                        <rect key="frame" x="0.0" y="43.5" width="414" height="0.5"/>
+                        <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="CAn-F1-aPT"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Tol-I8-Zak" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="70m-a2-7hN"/>
+                    <constraint firstItem="60d-yF-Cig" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="FNg-s7-7mw"/>
+                    <constraint firstItem="Le7-CL-2TB" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Fb2-37-1as"/>
+                    <constraint firstAttribute="trailing" secondItem="60d-yF-Cig" secondAttribute="trailing" id="ayh-Vp-T8u"/>
+                    <constraint firstItem="BHf-Xe-UWK" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="cN3-2P-tcf"/>
+                    <constraint firstItem="BHf-Xe-UWK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="fif-al-HlS"/>
+                    <constraint firstAttribute="bottom" secondItem="60d-yF-Cig" secondAttribute="bottom" id="ifO-Nd-BiP"/>
+                    <constraint firstAttribute="trailing" secondItem="Le7-CL-2TB" secondAttribute="trailing" constant="16" id="qhW-sn-wKe"/>
+                    <constraint firstItem="Le7-CL-2TB" firstAttribute="leading" secondItem="Tol-I8-Zak" secondAttribute="trailing" constant="8" id="vTZ-FL-9xy"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="arrow" destination="Le7-CL-2TB" id="8Jq-vp-soB"/>
+                <outlet property="arrow_width" destination="8dD-tD-VWC" id="hm8-bC-RWy"/>
+                <outlet property="itemLabel" destination="BHf-Xe-UWK" id="RsJ-Md-Ssl"/>
+                <outlet property="valueLabel" destination="Tol-I8-Zak" id="3DK-I0-Koq"/>
+                <outlet property="value_right_space" destination="vTZ-FL-9xy" id="jeG-US-ikk"/>
+            </connections>
+            <point key="canvasLocation" x="-100" y="31"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="current-push-gray" width="8" height="13"/>
+    </resources>
+</document>
