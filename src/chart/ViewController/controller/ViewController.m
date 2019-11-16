@@ -34,7 +34,7 @@
 }
 
 - (UIView *)return_nav_bar {
-    LKNav *nav = [LKNav backStyleWithTitle:@"KLZ"];
+    LKNav *nav = [LKNav backStyleWithTitle:@"lk"];
     nav.backgroundColor = UIColor.brownColor;
     
     return nav;

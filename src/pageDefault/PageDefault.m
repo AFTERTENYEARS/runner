@@ -27,7 +27,7 @@
 - (UIView *)return_nav_bar {
     LKNav *nav = [[LKNav alloc] init];
     nav.backgroundColor = UIColor.brownColor;
-    nav.title = @"KLZ";
+    nav.title = @"lk";
     return nav;
 }
 
