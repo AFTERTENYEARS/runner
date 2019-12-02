@@ -32,9 +32,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSDictionary *)userInfo;
 
++ (BOOL)real;
+
 + (void)addDelegate:(id<UserInfoUpdate>)delegate;
 
 + (void)removeDelegate:(id<UserInfoUpdate>)delegate;
+
+
 
 
 @end

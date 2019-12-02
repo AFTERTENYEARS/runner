@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A0288102373AFFD004C39E9 /* ColumnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A02880F2373AFFD004C39E9 /* ColumnView.m */; };
 		0A28D85C237A4DE50030CB4C /* PushCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A28D85A237A4DE50030CB4C /* PushCell.m */; };
 		0A28D85D237A4DE50030CB4C /* PushCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A28D85B237A4DE50030CB4C /* PushCell.xib */; };
 		0A3684DB234EDD1F0091DCFC /* RadarChartDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3684D0234EDD1E0091DCFC /* RadarChartDataItem.m */; };
@@ -20,6 +21,7 @@
 		0A368505234F3A050091DCFC /* AnimationImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A368504234F3A050091DCFC /* AnimationImageView.m */; };
 		0A382851235FF60700A1B9E0 /* PlaceHolderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A38284F235FF60700A1B9E0 /* PlaceHolderCell.m */; };
 		0A382852235FF60700A1B9E0 /* PlaceHolderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A382850235FF60700A1B9E0 /* PlaceHolderCell.xib */; };
+		0A4666CE2382296E004B780E /* CustomHistogram.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4666CD2382296E004B780E /* CustomHistogram.m */; };
 		0A5D9096236192D5004E2A45 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A5D908B236192D5004E2A45 /* area.plist */; };
 		0A5D9097236192D5004E2A45 /* LKAddressPickerPresentAnimated.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5D908D236192D5004E2A45 /* LKAddressPickerPresentAnimated.m */; };
 		0A5D9098236192D5004E2A45 /* LKAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5D9090236192D5004E2A45 /* LKAddressModel.m */; };
@@ -27,6 +29,7 @@
 		0A5D909A236192D5004E2A45 /* LKAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5D9092236192D5004E2A45 /* LKAddressViewController.m */; };
 		0A5D909B236192D5004E2A45 /* LKAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5D9093236192D5004E2A45 /* LKAddressPickerView.m */; };
 		0A5FEB162327883F00866C91 /* LKCountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5FEB152327883F00866C91 /* LKCountDown.m */; };
+		0A656BDC238BD47E0035BC71 /* LKAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A656BDB238BD47E0035BC71 /* LKAlertView.m */; };
 		0A71C1BA23501608009AD0A2 /* HistogramChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A71C1B923501608009AD0A2 /* HistogramChart.m */; };
 		0A87AACD2376BFE8005B7D64 /* LKItemSelect.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A87AACC2376BFE8005B7D64 /* LKItemSelect.m */; };
 		0A8820CA236137F70080D580 /* LightLKButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A8820C9236137F70080D580 /* LightLKButton.m */; };
@@ -62,7 +65,9 @@
 		0AC76A51237CF0EF00A30393 /* PasswordPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC76A50237CF0EF00A30393 /* PasswordPage.m */; };
 		0AC973E5234D87C4007FCF56 /* LKRollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC973E3234D87C4007FCF56 /* LKRollView.m */; };
 		0AC973E9234DB074007FCF56 /* LKSwiper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC973E8234DB074007FCF56 /* LKSwiper.m */; };
+		0ACB58AE23922E1D0066613A /* UIViewController+POP.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACB58AD23922E1D0066613A /* UIViewController+POP.m */; };
 		0ACFB0FD232A3942008B031F /* UserLoginInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACFB0FC232A3942008B031F /* UserLoginInfo.m */; };
+		0AD8950723877F8B007FECB1 /* LCQRCodeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD8950623877F8B007FECB1 /* LCQRCodeUtil.m */; };
 		0ADB88D52322335C00605F48 /* PushPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ADB88D42322335C00605F48 /* PushPage.m */; };
 		0ADB88D92322411F00605F48 /* Func.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ADB88D82322411F00605F48 /* Func.m */; };
 		0ADFE6F023710B9F00C336A7 /* SuccessPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ADFE6EF23710B9F00C336A7 /* SuccessPage.m */; };
@@ -80,6 +85,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A02880E2373AFFD004C39E9 /* ColumnView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColumnView.h; sourceTree = "<group>"; };
+		0A02880F2373AFFD004C39E9 /* ColumnView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColumnView.m; sourceTree = "<group>"; };
 		0A28D859237A4DE50030CB4C /* PushCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushCell.h; sourceTree = "<group>"; };
 		0A28D85A237A4DE50030CB4C /* PushCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushCell.m; sourceTree = "<group>"; };
 		0A28D85B237A4DE50030CB4C /* PushCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PushCell.xib; sourceTree = "<group>"; };
@@ -105,6 +112,8 @@
 		0A38284E235FF60700A1B9E0 /* PlaceHolderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlaceHolderCell.h; sourceTree = "<group>"; };
 		0A38284F235FF60700A1B9E0 /* PlaceHolderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlaceHolderCell.m; sourceTree = "<group>"; };
 		0A382850235FF60700A1B9E0 /* PlaceHolderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceHolderCell.xib; sourceTree = "<group>"; };
+		0A4666CC2382296E004B780E /* CustomHistogram.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomHistogram.h; sourceTree = "<group>"; };
+		0A4666CD2382296E004B780E /* CustomHistogram.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomHistogram.m; sourceTree = "<group>"; };
 		0A5D908B236192D5004E2A45 /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
 		0A5D908C236192D5004E2A45 /* LKAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKAddressViewController.h; sourceTree = "<group>"; };
 		0A5D908D236192D5004E2A45 /* LKAddressPickerPresentAnimated.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKAddressPickerPresentAnimated.m; sourceTree = "<group>"; };
@@ -118,8 +127,11 @@
 		0A5D9095236192D5004E2A45 /* LKAddressModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKAddressModel.h; sourceTree = "<group>"; };
 		0A5FEB142327883F00866C91 /* LKCountDown.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKCountDown.h; sourceTree = "<group>"; };
 		0A5FEB152327883F00866C91 /* LKCountDown.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKCountDown.m; sourceTree = "<group>"; };
+		0A656BDA238BD47E0035BC71 /* LKAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKAlertView.h; sourceTree = "<group>"; };
+		0A656BDB238BD47E0035BC71 /* LKAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKAlertView.m; sourceTree = "<group>"; };
 		0A71C1B823501608009AD0A2 /* HistogramChart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HistogramChart.h; sourceTree = "<group>"; };
 		0A71C1B923501608009AD0A2 /* HistogramChart.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HistogramChart.m; sourceTree = "<group>"; };
+		0A82531A2394BDF80089A5EB /* 立刷掌柜Release.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "立刷掌柜Release.entitlements"; sourceTree = "<group>"; };
 		0A87AACB2376BFE8005B7D64 /* LKItemSelect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKItemSelect.h; sourceTree = "<group>"; };
 		0A87AACC2376BFE8005B7D64 /* LKItemSelect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKItemSelect.m; sourceTree = "<group>"; };
 		0A8820C8236137F70080D580 /* LightLKButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LightLKButton.h; sourceTree = "<group>"; };
@@ -139,7 +151,7 @@
 		0A9D8076237026E700ED80B1 /* UserInfoProtocolPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfoProtocolPage.h; sourceTree = "<group>"; };
 		0A9D8077237026E700ED80B1 /* UserInfoProtocolPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfoProtocolPage.m; sourceTree = "<group>"; };
 		0A9DE396237BDC15002544D4 /* TableFootView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableFootView.xib; sourceTree = "<group>"; };
-		0AA9985C231E03A600877690 /* runner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = runner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AA9985C231E03A600877690 /* 立刷掌柜.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "立刷掌柜.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AA9985F231E03A600877690 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0AA99860231E03A600877690 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0AA99862231E03A600877690 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -190,9 +202,13 @@
 		0AC973E4234D87C4007FCF56 /* LKRollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKRollView.h; sourceTree = "<group>"; };
 		0AC973E7234DB074007FCF56 /* LKSwiper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKSwiper.h; sourceTree = "<group>"; };
 		0AC973E8234DB074007FCF56 /* LKSwiper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKSwiper.m; sourceTree = "<group>"; };
+		0ACB58AC23922E1D0066613A /* UIViewController+POP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+POP.h"; sourceTree = "<group>"; };
+		0ACB58AD23922E1D0066613A /* UIViewController+POP.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+POP.m"; sourceTree = "<group>"; };
 		0ACFB0F92329F142008B031F /* Regex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Regex.h; sourceTree = "<group>"; };
 		0ACFB0FB232A3942008B031F /* UserLoginInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserLoginInfo.h; sourceTree = "<group>"; };
 		0ACFB0FC232A3942008B031F /* UserLoginInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserLoginInfo.m; sourceTree = "<group>"; };
+		0AD8950523877F8B007FECB1 /* LCQRCodeUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCQRCodeUtil.h; sourceTree = "<group>"; };
+		0AD8950623877F8B007FECB1 /* LCQRCodeUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCQRCodeUtil.m; sourceTree = "<group>"; };
 		0ADB88D32322335C00605F48 /* PushPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushPage.h; sourceTree = "<group>"; };
 		0ADB88D42322335C00605F48 /* PushPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushPage.m; sourceTree = "<group>"; };
 		0ADB88D72322411F00605F48 /* Func.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Func.h; sourceTree = "<group>"; };
@@ -308,6 +324,17 @@
 			path = animationImageView;
 			sourceTree = "<group>";
 		};
+		0A4666CF238229A2004B780E /* customHistogram */ = {
+			isa = PBXGroup;
+			children = (
+				0A4666CC2382296E004B780E /* CustomHistogram.h */,
+				0A4666CD2382296E004B780E /* CustomHistogram.m */,
+				0A02880E2373AFFD004C39E9 /* ColumnView.h */,
+				0A02880F2373AFFD004C39E9 /* ColumnView.m */,
+			);
+			path = customHistogram;
+			sourceTree = "<group>";
+		};
 		0A5D908A236192C3004E2A45 /* LKAddressPicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -324,6 +351,24 @@
 				0A5D9092236192D5004E2A45 /* LKAddressViewController.m */,
 			);
 			path = LKAddressPicker;
+			sourceTree = "<group>";
+		};
+		0A656BDD238BD4840035BC71 /* LCQRCodeUtil */ = {
+			isa = PBXGroup;
+			children = (
+				0AD8950523877F8B007FECB1 /* LCQRCodeUtil.h */,
+				0AD8950623877F8B007FECB1 /* LCQRCodeUtil.m */,
+			);
+			path = LCQRCodeUtil;
+			sourceTree = "<group>";
+		};
+		0A656BDE238BD4960035BC71 /* LKAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				0A656BDA238BD47E0035BC71 /* LKAlertView.h */,
+				0A656BDB238BD47E0035BC71 /* LKAlertView.m */,
+			);
+			path = LKAlertView;
 			sourceTree = "<group>";
 		};
 		0A66C29F23279FC80061F3D5 /* countDown */ = {
@@ -418,7 +463,7 @@
 		0AA9985D231E03A600877690 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0AA9985C231E03A600877690 /* runner.app */,
+				0AA9985C231E03A600877690 /* 立刷掌柜.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -426,6 +471,7 @@
 		0AA9985E231E03A600877690 /* runner */ = {
 			isa = PBXGroup;
 			children = (
+				0A82531A2394BDF80089A5EB /* 立刷掌柜Release.entitlements */,
 				0AA99868231E03A900877690 /* Assets.xcassets */,
 				0AA9986A231E03A900877690 /* LaunchScreen.storyboard */,
 				0AA9986D231E03A900877690 /* Info.plist */,
@@ -457,6 +503,8 @@
 		0AA99878231E07C200877690 /* base */ = {
 			isa = PBXGroup;
 			children = (
+				0A656BDE238BD4960035BC71 /* LKAlertView */,
+				0A656BDD238BD4840035BC71 /* LCQRCodeUtil */,
 				0AF968F4237E48B300C40C6B /* LKStepPage */,
 				0A87AACE2376C2A7005B7D64 /* LKItemSelect */,
 				0A5D908A236192C3004E2A45 /* LKAddressPicker */,
@@ -474,6 +522,8 @@
 				0AB22FEF2320B10D001498FF /* nav */,
 				0AA9988C231E39DB00877690 /* page */,
 				0A972BC4231FA20000DBC599 /* tableProtocol */,
+				0ACB58AC23922E1D0066613A /* UIViewController+POP.h */,
+				0ACB58AD23922E1D0066613A /* UIViewController+POP.m */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -640,6 +690,7 @@
 				0ABFD2EF23603B6300E9D470 /* bottomView */,
 				0A8820C7236137CB0080D580 /* lightButton */,
 				0A8820CD2361399C0080D580 /* deepButton */,
+				0A4666CF238229A2004B780E /* customHistogram */,
 			);
 			path = current;
 			sourceTree = "<group>";
@@ -827,7 +878,7 @@
 			);
 			name = runner;
 			productName = runner;
-			productReference = 0AA9985C231E03A600877690 /* runner.app */;
+			productReference = 0AA9985C231E03A600877690 /* 立刷掌柜.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -932,12 +983,15 @@
 			files = (
 				0AC973E5234D87C4007FCF56 /* LKRollView.m in Sources */,
 				0A3684EE234EDDD10091DCFC /* UICountingLabel.m in Sources */,
+				0ACB58AE23922E1D0066613A /* UIViewController+POP.m in Sources */,
 				0AB230082320E648001498FF /* VCViewModel.m in Sources */,
 				0ACFB0FD232A3942008B031F /* UserLoginInfo.m in Sources */,
 				0A8DF3D4231FBD00003B7DD6 /* TabbarPage.m in Sources */,
 				0AFC903F2373C86F00A45FB0 /* WebPage.m in Sources */,
+				0AD8950723877F8B007FECB1 /* LCQRCodeUtil.m in Sources */,
 				0A87AACD2376BFE8005B7D64 /* LKItemSelect.m in Sources */,
 				0A368505234F3A050091DCFC /* AnimationImageView.m in Sources */,
+				0A656BDC238BD47E0035BC71 /* LKAlertView.m in Sources */,
 				0ABFD2F523603BBF00E9D470 /* BottomView.m in Sources */,
 				0AB22FFC2320C9CD001498FF /* ViewControllerTableProtocol.m in Sources */,
 				0A71C1BA23501608009AD0A2 /* HistogramChart.m in Sources */,
@@ -957,6 +1011,8 @@
 				0AA9988B231E19FB00877690 /* UIView+Extension.m in Sources */,
 				0ADB88D92322411F00605F48 /* Func.m in Sources */,
 				0A972BB9231F44CA00DBC599 /* NetValue.m in Sources */,
+				0A4666CE2382296E004B780E /* CustomHistogram.m in Sources */,
+				0A0288102373AFFD004C39E9 /* ColumnView.m in Sources */,
 				0AC76A51237CF0EF00A30393 /* PasswordPage.m in Sources */,
 				0AA9986F231E03A900877690 /* main.m in Sources */,
 				0A5D9099236192D5004E2A45 /* LKAddressPickViewTableViewCell.m in Sources */,
@@ -1124,6 +1180,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3RPF87RK6C;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/runner/PrefixHeader.pch";
 				INFOPLIST_FILE = runner/Info.plist;
@@ -1132,9 +1189,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.runner.www;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lishuazhanggui.www;
+				PRODUCT_NAME = "立刷掌柜";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1143,8 +1200,10 @@
 			baseConfigurationReference = 74B429156165080383452151 /* Pods-runner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "runner/立刷掌柜Release.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3RPF87RK6C;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/runner/PrefixHeader.pch";
 				INFOPLIST_FILE = runner/Info.plist;
@@ -1153,9 +1212,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.runner.www;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lishuazhanggui.www;
+				PRODUCT_NAME = "立刷掌柜";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

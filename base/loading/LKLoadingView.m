@@ -61,11 +61,23 @@ UIView *blockView;
     
     //[self showLoadingWithWindow];
     
-    blockView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height)];
-    blockView.backgroundColor = COLOR_ALPHA(UIColor.blackColor, 0.1);
-    [blockView addSubview:[self GIF]];
+//    blockView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height)];
+//    [blockView addSubview:[self GIF]];
+//    blockView.userInteractionEnabled = NO;
+//
+//    [[[UIApplication sharedApplication] keyWindow] addSubview:blockView];
     
-    [[[UIApplication sharedApplication] keyWindow] addSubview:blockView];
+    [LKLoadingView dismiss];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        blockView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height)];
+        [blockView addSubview:[self GIF]];
+        blockView.userInteractionEnabled = NO;
+        
+        [[[UIApplication sharedApplication] keyWindow] addSubview:blockView];
+    });
+        
+    
 }
 
 + (void)showBlock {
@@ -74,14 +86,24 @@ UIView *blockView;
 //    [SVProgressHUD show];
     
     //[self showLoadingWithWindow];
+        
+//    blockView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height)];
+//    blockView.backgroundColor = COLOR_ALPHA(UIColor.blackColor, 0.2);
+//    [blockView addSubview:[self GIF]];
+//
+//    [[[UIApplication sharedApplication] keyWindow] addSubview:blockView];
+    
+    [LKLoadingView dismiss];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        blockView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height)];
+        blockView.backgroundColor = COLOR_ALPHA(UIColor.blackColor, 0.2);
+        [blockView addSubview:[self GIF]];
+
+        [[[UIApplication sharedApplication] keyWindow] addSubview:blockView];
+    });
     
     
-    blockView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height)];
-    blockView.backgroundColor = COLOR_ALPHA(UIColor.blackColor, 0.1);
-    blockView.userInteractionEnabled = NO;
-    [blockView addSubview:[self GIF]];
-    
-    [[[UIApplication sharedApplication] keyWindow] addSubview:blockView];
 }
 
 + (void)dismiss {
@@ -97,8 +119,13 @@ UIView *blockView;
 //            }
 //        }
     
-    [blockView removeFromSuperview];
-    blockView = nil;
+//    [blockView removeFromSuperview];
+//    blockView = nil;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [blockView removeFromSuperview];
+        blockView = nil;
+    });
 }
 
 + (void)showCountDown:(NSInteger)time block:(BOOL)block endCallBack:(EndBlock)endBlock {
@@ -262,23 +289,29 @@ UIView *blockView;
 }
 
 + (UIImageView *)GIF {
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(Screen_Width / 2.0 - 60, Screen_Height / 2.0 - 40, 120, 80)];
-    NSArray *names = @[@"Image-1",
-    @"Image-2",
-    @"Image-3",
-    @"Image-4",
-    @"Image-5",
-    @"Image-6",
-    @"Image-7",
-    @"Image-8",
-    @"Image-9",
-    @"Image-10",
-    @"Image-11",
-    @"Image-12",
-    @"Image-13",
-    @"Image-14",
-    @"Image-15",
-    @"Image-16",];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(Screen_Width / 2.0 - 105, Screen_Height / 2.0 - 75, 210, 150)];
+    
+    NSMutableArray *names = [NSMutableArray new];
+    
+    for (NSInteger i = 1; i <= 10; i++) {
+        [names addObject: [NSString stringWithFormat:@"loading-%ld", (long)i]];
+    }
+//    NSArray *names = @[@"Image-1",
+//    @"Image-2",
+//    @"Image-3",
+//    @"Image-4",
+//    @"Image-5",
+//    @"Image-6",
+//    @"Image-7",
+//    @"Image-8",
+//    @"Image-9",
+//    @"Image-10",
+//    @"Image-11",
+//    @"Image-12",
+//    @"Image-13",
+//    @"Image-14",
+//    @"Image-15",
+//    @"Image-16",];
     
     NSMutableArray *images = [NSMutableArray new];
     for (NSString *name in names) {
@@ -286,7 +319,7 @@ UIView *blockView;
     }
     imageView.image = images[0];
     imageView.animationImages = images;
-    imageView.animationDuration = 0.8;
+    imageView.animationDuration = 0.3;
     imageView.animationRepeatCount = 0;
     
     [imageView startAnimating];

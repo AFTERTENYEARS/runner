@@ -31,8 +31,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _normalImages = @[Image_By_Name(@"tabbar_my_normal"), Image_By_Name(@"tabbar_home_normal"), Image_By_Name(@"tabbar_team_normal"), Image_By_Name(@"tabbar_my_normal")];
-    _hilightImages = @[Image_By_Name(@"tabbar_my_hilight"), Image_By_Name(@"tabbar_home_hilight"), Image_By_Name(@"tabbar_team_hilight"), Image_By_Name(@"tabbar_my_hilight")];
+    _normalImages = @[
+        //Image_By_Name(@"tabbar_my_normal"),
+                      Image_By_Name(@"tabbar_home_normal"),
+                      Image_By_Name(@"tabbar_team_normal"),
+                      Image_By_Name(@"tabbar_my_normal")];
+    _hilightImages = @[
+        //Image_By_Name(@"tabbar_my_hilight"),
+                       Image_By_Name(@"tabbar_home_hilight"),
+                       Image_By_Name(@"tabbar_team_hilight"),
+                       Image_By_Name(@"tabbar_my_hilight")];
     
     [self configViewControllers];
     [self configUI];
@@ -41,7 +49,11 @@
 }
 
 - (void)configUI {
-    NSArray<NSString *> *itemNames = @[@"test", @"test", @"test", @"test"];
+    NSArray<NSString *> *itemNames = @[
+                                        //@"test",
+                                       @"首页",
+                                       @"团队",
+                                       @"我的"];
     
     CGFloat marginTop = 5.0f;
     
@@ -84,30 +96,41 @@
 
 - (void)configViewControllers {
     //viewController
-    PageDefault *vc1 = [[PageDefault alloc] init];
+    //PageDefault *vc1 = [[PageDefault alloc] init];
     PageDefault *vc2 = [[PageDefault alloc] init];
     PageDefault *vc3 = [[PageDefault alloc] init];
     PageDefault *vc4 = [[PageDefault alloc] init];
+//    HomePage *vc2 = [[HomePage alloc] init];
+//    TeamPage *vc3 = [[TeamPage alloc] init];
+//    MyPage *vc4 = [[MyPage alloc] init];
     
-    [self addChildViewController:vc1];
+    //[self addChildViewController:vc1];
     [self addChildViewController:vc2];
     [self addChildViewController:vc3];
     [self addChildViewController:vc4];
     
-    self.viewControllers = @[vc1, vc2, vc3, vc4];
+    self.viewControllers = @[
+        //vc1,
+        vc2,
+        vc3,
+        vc4];
     
     //view
-    vc1.view.frame = CGRectMake(0, 0, Screen_Width, Screen_Height - Tabbar_Height - Control_Bar_Height);
+    //vc1.view.frame = CGRectMake(0, 0, Screen_Width, Screen_Height - Tabbar_Height - Control_Bar_Height);
     vc2.view.frame = CGRectMake(0, 0, Screen_Width, Screen_Height - Tabbar_Height - Control_Bar_Height);
     vc3.view.frame = CGRectMake(0, 0, Screen_Width, Screen_Height - Tabbar_Height - Control_Bar_Height);
     vc4.view.frame = CGRectMake(0, 0, Screen_Width, Screen_Height - Tabbar_Height - Control_Bar_Height);
     
-    [self.view addSubview:vc1.view];
+    //[self.view addSubview:vc1.view];
     [self.view addSubview:vc2.view];
     [self.view addSubview:vc3.view];
     [self.view addSubview:vc4.view];
     
-    self.contentViews = @[vc1.view, vc2.view, vc3.view, vc4.view];
+    self.contentViews = @[
+        //vc1.view,
+        vc2.view,
+        vc3.view,
+        vc4.view];
 }
 
 - (void)visableAtFirst {

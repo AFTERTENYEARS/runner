@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - AlipaySDK-iOS (15.5.9)
   - IQKeyboardManager (6.5.3)
   - Masonry (1.1.0)
   - MJRefresh (3.2.0)
@@ -22,35 +23,42 @@ PODS:
     - SDWebImage/Core (= 5.3.0)
   - SDWebImage/Core (5.3.0)
   - SVProgressHUD (2.2.5)
+  - WechatOpenSDK (1.8.6)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
+  - AlipaySDK-iOS
   - IQKeyboardManager
   - Masonry
   - MJRefresh
   - ReactiveObjC
   - SDWebImage
   - SVProgressHUD
+  - WechatOpenSDK
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
+    - AlipaySDK-iOS
     - IQKeyboardManager
     - Masonry
     - MJRefresh
     - ReactiveObjC
     - SDWebImage
     - SVProgressHUD
+    - WechatOpenSDK
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  AlipaySDK-iOS: 1c5283b30977a24acecc0114662697f7dc78f618
   IQKeyboardManager: c2f901164d56807a35788483584d09fa69192e8e
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SDWebImage: f1afa74b86587c2c63f4e80dfd39b21e3c17b45b
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  WechatOpenSDK: 368ae03b72ee3ea1328c4f11326fbb5d2721d118
 
-PODFILE CHECKSUM: 7b49bf9f4221c7aa43f9af5a7f35e7ec6dd891c7
+PODFILE CHECKSUM: 281feaee0791b80ea1cb70d4fb0bcdb4bea459af
 
 COCOAPODS: 1.8.4

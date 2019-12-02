@@ -50,7 +50,7 @@
 }
 
 - (UIView *)return_nav_bar {
-    return [LKNav backStyleWithTitle:@"lk"];
+    return [LKNav backStyleWithTitle:@"KLZ"];
 }
 
 /*

@@ -153,6 +153,8 @@ ClickItemCallback currentClickItemCallback;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"tableViewCell" forIndexPath:indexPath];
     [cell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     cell.backgroundColor = FAFAFA;
     cell.contentView.backgroundColor = indexPath.row == idx ? COLOR(@"F9F1F1") : COLOR(@"fafafa");
     cell.contentView.layer.borderWidth = indexPath.row == idx ? 0.5f : 0.0f;

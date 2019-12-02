@@ -8,10 +8,24 @@
 
 #import "PageDefaultTableProtocol.h"
 
+@interface PageDefaultTableProtocol ()
+
+@property (nonatomic, strong) NSArray *titles;
+
+@end
+
 @implementation PageDefaultTableProtocol
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        _titles = @[@"登录", @"图表", @"gif", @"登录注册", @"支付宝支付测试"];
+    }
+    return self;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return _titles.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -19,8 +33,8 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:self.identifier];
     }
-    NSArray *titles = @[@"图表", @"图表", @"gif", @"gif"];
-    cell.textLabel.text = titles[indexPath.row];
+    
+    cell.textLabel.text = _titles[indexPath.row];
     return cell;
 }
 

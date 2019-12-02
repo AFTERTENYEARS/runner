@@ -7,6 +7,7 @@
 //
 
 #import "TablePage.h"
+#import <MJRefresh.h>
 
 @interface TablePage ()
 
@@ -34,7 +35,27 @@
     
 }
 
-- (UITableView *)tableView{
+- (void)setMj_callback:(MJ_Callback)mj_callback {
+    _mj_callback = mj_callback;
+    MJRefreshHeader *header = [MJRefreshGifHeader headerWithRefreshingBlock:^{
+        
+        dispatch_queue_t queue =  dispatch_queue_create(0, DISPATCH_QUEUE_CONCURRENT);
+        dispatch_async(queue, ^{
+            if (mj_callback) {
+                mj_callback();
+            }
+        });
+        //监测到当前线程池前边的线程全部执行完毕
+        dispatch_barrier_async(queue, ^{
+            [self.tableView.mj_header endRefreshing];
+        });
+        
+    }];
+    
+    self.tableView.mj_header = header;
+}
+
+- (UITableView *)tableView {
     if (_tableView) {
         return _tableView;
     }

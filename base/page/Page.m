@@ -87,6 +87,12 @@
     return lk_status_black;
 }
 
+//- (void)dealloc {
+//    //[LKLoadingView dismiss];
+//}
+
+
+
 /*
 #pragma mark - Navigation
 

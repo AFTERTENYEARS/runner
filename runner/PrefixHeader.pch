@@ -27,6 +27,7 @@
 #import "Chart.h"
 #import "LKClickView.h"
 #import "LKItemSelect.h"
+#import "LKAlertView.h"
 
 
 //lib
@@ -58,6 +59,7 @@
 #import "SuccessPage.h"
 #import "PwdView.h"
 #import "PasswordPage.h"
+#import "CustomHistogram.h"
 
 
 

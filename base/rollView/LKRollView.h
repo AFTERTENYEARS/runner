@@ -21,7 +21,13 @@
 
 @property (nonatomic, assign) id<RollViewDelegate> delegate;
 
+@property (nonatomic, strong) UIScrollView *scrollView;
+
+@property (nonatomic, assign) float halfGap;   // 图片间距的一半
+
 @property (nonatomic, assign) NSInteger index;
+
+@property (nonatomic, assign) CGFloat picCornerRadius;
 
 /**
  初始化
@@ -33,8 +39,7 @@
  */
 - (instancetype)initWithFrame:(CGRect)frame withDistanceForScroll:(float)distance withGap:(float)gap;
 
-/** 滚动视图数据 */
-- (void)rollWithImageName:(NSArray *)ImageNameArr;
+- (void)rollWithImages:(NSArray<UIImage *> *)imagesArr;
 
 - (void)rollSingelScrollWithImageUrl:(NSArray *)ImageUrlArr;
 

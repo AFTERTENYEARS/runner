@@ -29,9 +29,9 @@
         self.isClicked = YES;
         [UIView animateWithDuration:0.1 animations:^{
             self.alpha = 0.6;
-            for (UIView * view in self.subviews) {
-                view.alpha = 0.6;
-            }
+//            for (UIView * view in self.subviews) {
+//                view.alpha = 0.6;
+//            }
         }];
     }
 }
@@ -46,9 +46,9 @@
         self.isClicked = NO;
         [UIView animateWithDuration:0.1 animations:^{
             self.alpha = 1.0;
-            for (UIView * view in self.subviews) {
-                view.alpha = 1.0;
-            }
+//            for (UIView * view in self.subviews) {
+//                view.alpha = 1.0;
+//            }
         }];
     });
 }

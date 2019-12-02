@@ -32,16 +32,27 @@
             self.backgroundColor = COLOR_ALPHA(UIColor.blackColor, 0.22);
         } completion:^(BOOL finished) {
             [self configUI];
-            [UIView animateWithDuration:0.1 animations:^{
+            // 弹簧动画，参数分别为：时长，延时，弹性（越小弹性越大），初始速度
+            [UIView animateWithDuration: 0.1 delay:0 usingSpringWithDamping:0.9 initialSpringVelocity:0.9 options:0 animations:^{
                 self.contentView.frame = CGRectMake(16, 62 + Status_Nav_Bar_Height, self.contentView.width, self.contentView.height);
+            } completion:^(BOOL finished) {
+                
             }];
         }];
     }
     return self;
 }
 
+- (void)setTexts:(NSArray<NSString *> *)texts {
+    _texts = texts;
+}
+
 - (void)configUI {
     [self addSubview:self.contentView];
+    _titleLabel.text = _texts[0];
+    _subTitleLabel.text = _texts[1];
+    _amountLabel.text = _texts[2];
+    _describeLabel.text = _texts[3];
 }
 
 

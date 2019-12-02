@@ -17,6 +17,8 @@
 
 #define Image_By_Name(name) [UIImage imageNamed:name]
 
+#define Lk_Image(imageView, url)  [imageView sd_setImageWithURL:[NSURL URLWithString:url]
+
 //加载xib
 #define View_By_Xib(xibName) [[[NSBundle mainBundle] loadNibNamed:xibName owner:self options:nil] lastObject]
 #define Views_By_Xib(xibName) [[NSBundle mainBundle] loadNibNamed:xibName owner:self options:nil]
@@ -28,6 +30,10 @@
 #define DELAY_EXECUTE(time,method) dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(time/*延迟执行时间*/ * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{\
     method;\
     });
+
+#define Step_1 @"caigou-shenqing"
+#define Step_2 @"caigou-fukuan"
+#define Step_3 @"caigou-over"
 
 
 #endif /* DefineDoc_h */

@@ -12,11 +12,13 @@ target 'runner' do
   # use_frameworks!
 
 	pod 'AFNetworking', '~> 3.0'
-  	pod 'Masonry'
-  	pod 'SDWebImage'
-  	pod 'MJRefresh'
-  	pod 'SVProgressHUD'
+  pod 'Masonry'
+  pod 'SDWebImage'
+  pod 'MJRefresh'
+  pod 'SVProgressHUD'
 	pod 'IQKeyboardManager'
 	pod 'ReactiveObjC'
+  pod 'AlipaySDK-iOS'
+  pod 'WechatOpenSDK'
 
 end

@@ -24,13 +24,21 @@ typedef void(^PwdCallback)(NSString *pwd);
 
 + (LKNav *)navByTitle:(NSString *)title;
 
++ (LKNav *)redNavByTitle:(NSString *)title;
+
 + (UIView *)maskView;
 
 + (UIView *)topTriangleViewWithPoint:(CGPoint)point width:(CGFloat)width text:text;
 
 + (UIView *)topMarkViewWithPoint:(CGPoint)point text:(NSString *)text;
 
-+ (void)passwordPresentCallback:(PwdCallback)callback;
++ (void)passwordPresentTexts:(NSArray *)texts Callback:(PwdCallback)callback;
+
++ (void)sdUrlImage:(UIImageView *)imageView url: (NSString *)url;
+
++ (void)switchToLoginPage;
+
++ (void)switchTarbarPage;
 
 @end
 

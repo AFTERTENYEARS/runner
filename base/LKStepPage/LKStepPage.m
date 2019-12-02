@@ -2,7 +2,7 @@
 //  LKStepPage.m
 //  runner
 //
-//  Created by 李书康 on 2019/11/15.
+//  Created by runner on 2019/11/15.
 //  Copyright © 2019 com.runner.www. All rights reserved.
 //
 
@@ -171,6 +171,21 @@
             titleButton.selected = NO;
         }
     }
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    double progress = (double)((double)(scrollView.contentOffset.x) / (double)scrollView.width);
+    
+    CGFloat button_w = 0;
+    if (_subTitleButtons.count > 0) {
+        UIButton *button = _subTitleButtons[0];
+        button_w = button.width;
+    }
+    
+    CGRect backViewFrame = CGRectMake(progress * button_w, _markView.y, button_w, _markView.height);
+    CGRect markFrame = CGRectMake(backViewFrame.origin.x + (button_w - _markView.width) / 2.0 , _markView.y, _markView.width, _markView.height);
+    _markView.frame = markFrame;
+    
 }
 
 

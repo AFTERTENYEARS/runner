@@ -14,6 +14,9 @@
 @implementation NetWork
 
 + (void)request:(NetWorkType)type url:(NSString *)url parameters:(id _Nullable)parameters progress:(DownloadProgress  _Nullable)progress loading:(Loading)loading netCallBack: (NetCallBack)netCallBack {
+    
+    [LKLoadingView dismiss];
+    
     if (loading == defaul) {
         [LKLoadingView show];
     }
@@ -74,6 +77,7 @@
     if (netValue.code == -1) {
         //这里要跳转登录页面
         netValue.msg = @"登录信息已过期，请重新登录...";
+        [Func switchToLoginPage];
     } else {
         netValue.msg = String_By_Obj(responseObject, @"msg");// netValue.code == 0 ? String_By_Obj(responseObject, @"msg") : @"";
     }
@@ -125,7 +129,6 @@
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     manager.requestSerializer.timeoutInterval = 15.0f;
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    
     if ([UserLoginInfo login]) {
         [manager.requestSerializer setValue:[UserLoginInfo token] forHTTPHeaderField:@"RetailToken"];
     }

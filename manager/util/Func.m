@@ -7,6 +7,7 @@
 //
 
 #import "Func.h"
+#import "TabbarPage.h"
 
 @implementation Func
 
@@ -72,6 +73,32 @@
     UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, nav.height - 0.5, nav.width, 0.5)];
     lineView.backgroundColor = E5E5E5;
     [nav addSubview:lineView];
+    
+    LKButton *back = [[LKButton alloc] initWithFrame:CGRectMake(nav.backItem.x, nav.backItem.y, 200, nav.backItem.height)];
+    back.click = ^{
+        [[Func currentVC].navigationController popViewControllerAnimated:YES];
+    };
+    [nav addSubview:back];
+    
+    return nav;
+}
+
++ (LKNav *)redNavByTitle:(NSString *)title {
+    LKNav *nav = [LKNav backStyleWithTitle:@""];
+    nav.backgroundColor = E94F4F;
+    [nav.backItem setTitle:@"" forState:UIControlStateNormal];
+    [nav.backItem setImage:Image_By_Name(@"current-back-white") forState:UIControlStateNormal];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(42, Status_Bar_Height, Screen_Width - 42 * 2, Nav_Bar_Height)];
+    titleLabel.textColor = FAFAFA;
+    titleLabel.font = [UIFont boldSystemFontOfSize:19];
+    titleLabel.text = title;
+    [nav addSubview:titleLabel];
+    
+    LKButton *back = [[LKButton alloc] initWithFrame:CGRectMake(nav.backItem.x, nav.backItem.y, 200, nav.backItem.height)];
+    back.click = ^{
+        [[Func currentVC].navigationController popViewControllerAnimated:YES];
+    };
+    [nav addSubview:back];
     
     return nav;
 }
@@ -204,10 +231,23 @@
     return contentView;
 }
 
-+ (void)passwordPresentCallback:(PwdCallback)callback {
++ (void)passwordPresentTexts:(NSArray *)texts Callback:(PwdCallback)callback {
     PasswordPage *passwordPage = [[PasswordPage alloc] init];
     passwordPage.pwdCallBack = callback;
+    passwordPage.texts = texts;
     [[UIApplication sharedApplication].keyWindow addSubview:passwordPage];
+}
+
++ (void)sdUrlImage:(UIImageView *)imageView url: (NSString *)url {
+    [imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", BASE_IMAGE_URL, url]]];
+}
+
++ (void)switchToLoginPage {
+    //[UIApplication sharedApplication].keyWindow.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[FLoginPage alloc] init]];
+}
+
++ (void)switchTarbarPage {
+    //[UIApplication sharedApplication].keyWindow.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[TabbarPage alloc] init]];
 }
 
 @end

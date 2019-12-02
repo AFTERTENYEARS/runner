@@ -15,7 +15,7 @@ typedef void(^PwdCallback)(NSString *pwd);
 @interface PasswordPage : UIView
 
 @property (nonatomic, copy) PwdCallback pwdCallBack;
-
+@property (nonatomic, strong) NSArray<NSString *> *texts;
 @end
 
 NS_ASSUME_NONNULL_END

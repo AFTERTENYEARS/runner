@@ -34,7 +34,7 @@
 }
 
 - (UIView *)return_nav_bar {
-    LKNav *nav = [LKNav backStyleWithTitle:@"lk"];
+    LKNav *nav = [LKNav backStyleWithTitle:@"KLZ"];
     nav.backgroundColor = UIColor.brownColor;
     
     return nav;
@@ -68,7 +68,7 @@
     
     LKRollView *roll = [[LKRollView alloc] initWithFrame:CGRectMake((Screen_Width - 100) / 2.0, 0, 100, 100 * 1.77) withDistanceForScroll:12 withGap:12];
     roll.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.7];
-    [roll rollWithImageName:@[@"example", @"example", @"example"]];
+    [roll rollWithImages:@[[UIImage imageNamed:@"example"], [UIImage imageNamed:@"example"], [UIImage imageNamed:@"example"]]];
     
     self.tableProtocol.views = @[/*_treeChart,*/ _histogramChart, _lineChart, _radarChart, _circleChart, swiper, roll];
     [self.tableView reloadData];

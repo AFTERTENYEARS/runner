@@ -13,11 +13,7 @@
 
 @interface LKRollView ()<UIScrollViewDelegate>
 
-@property (nonatomic, strong) UIScrollView *scrollView;
-
 @property (nonatomic, strong) NSArray *rollDataArr;   // 图片数据
-
-@property (nonatomic, assign) float halfGap;   // 图片间距的一半
 
 @end
 @implementation LKRollView
@@ -28,6 +24,7 @@
     if (self) {
         self.clipsToBounds = YES;
         self.halfGap = gap / 2;
+        self.picCornerRadius = 4.0f;
         
         /** 设置 UIScrollView */
         self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(distance, 0, self.frame.size.width - 2 * distance, self.frame.size.height)];
@@ -54,8 +51,8 @@
 }
 
 #pragma mark - 视图数据
-- (void)rollWithImageName:(NSArray *)ImageNameArr{
-    self.rollDataArr = ImageNameArr;
+- (void)rollWithImages:(NSArray<UIImage *> *)imagesArr{
+    self.rollDataArr = imagesArr;
     
     for (int i = 0; i < self.rollDataArr.count; i++) {
         for (UIView *underView in self.scrollView.subviews) {
@@ -68,7 +65,7 @@
         UIImageView *picImageView = [[UIImageView alloc] init];
         picImageView.contentMode = UIViewContentModeScaleAspectFit;
         picImageView.layer.masksToBounds = YES;
-        picImageView.layer.cornerRadius = 4.0f;
+        picImageView.layer.cornerRadius = _picCornerRadius;
         picImageView.userInteractionEnabled = YES;
         picImageView.tag = 400 + i ;
         
@@ -88,15 +85,24 @@
          *  i   -> (2 * i +1) *  halfGap + 2 *(width - 2 * halfGap )
          */
         
+        
         CGFloat picImageViewWidth = self.scrollView.frame.size.width - 2 * self.halfGap;
         CGFloat picImageViewHeight = picImageViewWidth / 3 * 4;
         CGFloat picImageViewX = (2 * i + 1) * self.halfGap + i * picImageViewWidth;
         CGFloat picImageViewY = (self.frame.size.height - picImageViewHeight) / 2;
         
+        ////////测试
+        picImageView.contentMode = UIViewContentModeScaleAspectFill;
+        //self.scrollView.backgroundColor = UIColor.brownColor;
+        picImageViewWidth = self.scrollView.frame.size.width - 2 * self.halfGap;
+        picImageViewHeight = self.scrollView.frame.size.height;
+        picImageViewX = (2 * i + 1) * self.halfGap + i * picImageViewWidth;
+        picImageViewY = 0;
+        
         picImageView.frame = CGRectMake(picImageViewX, picImageViewY, picImageViewWidth, picImageViewHeight);
         
         //设置图片
-        picImageView.image = [UIImage imageNamed:self.rollDataArr[i]];
+        picImageView.image = self.rollDataArr[i];//[UIImage imageNamed:self.rollDataArr[i]];
         [self.scrollView addSubview:picImageView];
     }
     //设置轮播图当前的显示区域
@@ -143,7 +149,6 @@
         CGFloat picImageViewY = (self.frame.size.height - picImageViewHeight) / 2;
         
         picImageView.frame = CGRectMake(picImageViewX, picImageViewY, picImageViewWidth, picImageViewHeight);
-        
         
         //设置图片
         [picImageView sd_setImageWithURL:[NSURL URLWithString:self.rollDataArr[i]] /*placeholderImage:[UIImage imageNamed:@""]*/];

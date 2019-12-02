@@ -6,13 +6,19 @@
 //  Copyright © 2019 com.runner.www. All rights reserved.
 //
 
+#define WX_APPID @"wx26950a96938f411a"
+
 #import "AppInitUtils.h"
+#include <WechatOpenSDK/WXApi.h>
 
 @implementation AppInitUtils
 
 + (void)AppInit {
     [self initIQKeyboardManager];
-    [UserLoginInfo loadUserInfo];
+    [self initWX];
+    if ([UserLoginInfo login]) {
+        [UserLoginInfo loadUserInfo];
+    }
 }
 
 + (void)initIQKeyboardManager {
@@ -26,6 +32,10 @@
     keyboardManager.placeholderFont = [UIFont boldSystemFontOfSize:17]; // 设置占位文字的字体
     keyboardManager.keyboardDistanceFromTextField = 10.0f; // 输入框距离键盘的距离
     keyboardManager.toolbarDoneBarButtonItemText = @"完成"; //完成按钮
+}
+
++ (void)initWX {
+    [WXApi registerApp:WX_APPID universalLink:@"https://www.yuecgroup.com/"];
 }
 
 @end
