@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AppInitUtils : NSObject
 
-+ (void)AppInit;
++ (void)AppInit: (NSDictionary *)launchOptions window: (UIWindow *)window;
 
 @end
 

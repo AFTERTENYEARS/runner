@@ -10,6 +10,19 @@
 
 @implementation LightLKButton
 
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.layer.masksToBounds = YES;
+        self.layer.cornerRadius = 5.0f;
+        self.layer.borderWidth = 0.5f;
+        self.layer.borderColor = E94F4f.CGColor;
+        
+        [self customNormalColor:[UIColor clearColor] highLightedColor:COLOR(@"E8495B") disabledColor:COLOR(@"F98794") titleNormalColor:COLOR(@"E8495B") titleHilightedColor:COLOR(@"FAFAFA")];
+    }
+    return self;
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.layer.masksToBounds = YES;

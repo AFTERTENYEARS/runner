@@ -33,14 +33,15 @@
     [super viewDidLoad];
     _normalImages = @[
         //Image_By_Name(@"tabbar_my_normal"),
-                      Image_By_Name(@"tabbar_home_normal"),
-                      Image_By_Name(@"tabbar_team_normal"),
-                      Image_By_Name(@"tabbar_my_normal")];
+        [UIImage imageNamed:@"tabbar_home_normal"],
+        Image_By_Name(@"tabbar_team_normal"),
+        Image_By_Name(@"tabbar_my_normal")
+    ];
     _hilightImages = @[
         //Image_By_Name(@"tabbar_my_hilight"),
-                       Image_By_Name(@"tabbar_home_hilight"),
-                       Image_By_Name(@"tabbar_team_hilight"),
-                       Image_By_Name(@"tabbar_my_hilight")];
+        Image_By_Name(@"tabbar_home_hilight"),
+        Image_By_Name(@"tabbar_team_hilight"),
+        Image_By_Name(@"tabbar_my_hilight")];
     
     [self configViewControllers];
     [self configUI];
@@ -50,10 +51,10 @@
 
 - (void)configUI {
     NSArray<NSString *> *itemNames = @[
-                                        //@"test",
-                                       @"首页",
-                                       @"团队",
-                                       @"我的"];
+        //@"test",
+        @"首页",
+        @"团队",
+        @"我的"];
     
     CGFloat marginTop = 5.0f;
     
@@ -100,9 +101,6 @@
     PageDefault *vc2 = [[PageDefault alloc] init];
     PageDefault *vc3 = [[PageDefault alloc] init];
     PageDefault *vc4 = [[PageDefault alloc] init];
-//    HomePage *vc2 = [[HomePage alloc] init];
-//    TeamPage *vc3 = [[TeamPage alloc] init];
-//    MyPage *vc4 = [[MyPage alloc] init];
     
     //[self addChildViewController:vc1];
     [self addChildViewController:vc2];

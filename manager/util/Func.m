@@ -8,6 +8,7 @@
 
 #import "Func.h"
 #import "TabbarPage.h"
+#import <CommonCrypto/CommonDigest.h>
 
 @implementation Func
 
@@ -41,6 +42,9 @@
 }
 
 + (void)toast:(NSString *_Nullable)msg{
+    if (msg.length <= 0) {
+        return;
+    }
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     
     UILabel *label = [UILabel new];
@@ -242,12 +246,114 @@
     [imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", BASE_IMAGE_URL, url]]];
 }
 
++ (NSString *)fullurl: (NSString *)url {
+    return [NSString stringWithFormat:@"%@%@", BASE_IMAGE_URL, url];
+}
+
 + (void)switchToLoginPage {
     //[UIApplication sharedApplication].keyWindow.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[FLoginPage alloc] init]];
 }
 
 + (void)switchTarbarPage {
     //[UIApplication sharedApplication].keyWindow.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[TabbarPage alloc] init]];
+}
+
++ (BOOL)needWelcomePage {
+    if (Int_By_Obj([NSUserDefaults standardUserDefaults], @"welcome") == 10) {
+        return NO;
+    } else {
+        [[NSUserDefaults standardUserDefaults] setInteger:10 forKey:@"welcome"];
+        return YES;
+    }
+}
+
++ (NSString *)inviteUrl {
+    NSString *url = [NSString stringWithFormat:@"https://www.klz888.com/invitefriend/#/invitefriend/?invitecode=%@", String_By_Obj([UserLoginInfo userInfo], @"invitecode")];
+    return url;
+}
+
++ (NSString *)secureName:(NSString *)name {
+    if (name.length <= 1) {
+        return name;
+    }
+    NSInteger xingxingCount = name.length - 1;
+    NSMutableString *secName = [[NSMutableString alloc] init];
+    for (NSInteger i = 0; i < xingxingCount; i++) {
+        [secName appendString:@"*"];
+    }
+    [secName appendString:[name substringFromIndex:name.length-1]];
+    return secName;
+}
+
++ (NSString *)secureMobile:(NSString *)mobile {
+    if (mobile.length != 11) {
+        return mobile;
+    }
+    return [NSString stringWithFormat:@"%@****%@",[mobile substringToIndex:2],[mobile substringFromIndex:mobile.length - 4]];
+}
+
++ (NSString *)bankTail:(NSString *)bankcard {
+    if (bankcard.length <= 3) {
+        return bankcard;
+    }
+    return [bankcard substringFromIndex:bankcard.length-4];
+}
+
++ (BOOL)realName {
+    BOOL authenticationStatus = Int_By_Obj([UserLoginInfo userInfo], @"authenticationStatus") == 4 ? YES : NO;
+    return authenticationStatus;
+}
+
++ (void)switchToAuthPage {
+    //[[Func currentVC].navigationController pushViewController:[AuthPage1 new] animated:YES];
+}
+
++ (BOOL)withdrawpwd {
+    return Int_By_Obj([UserLoginInfo userInfo], @"withdrawpwd") <= 0 ? NO : YES;
+}
+
++ (void)switchToSetWithdrawPwd {
+    //[[Func currentVC].navigationController pushViewController:[ResetWithdrawPwdPage1 new] animated:YES];
+}
+
++ (NSString *)MD5:(NSString *)string{
+    //要进行UTF8的转码
+    const char* input = [string UTF8String];
+    unsigned char result[CC_MD5_DIGEST_LENGTH];
+    CC_MD5(input, (CC_LONG)strlen(input), result);
+    
+    NSMutableString *digest = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
+    for (NSInteger i = 0; i < CC_MD5_DIGEST_LENGTH; i++) {
+        [digest appendFormat:@"%02x", result[i]];
+    }
+    return digest;
+}
+
++ (void)removeLastVC:(UINavigationController *)navigationController {
+    NSMutableArray *viewControllers = [navigationController.viewControllers mutableCopy];
+    [viewControllers removeLastObject];
+    navigationController.viewControllers = viewControllers;
+}
+
++ (BOOL)pwdLimit:(NSString *)pwd {
+    return REGEX_MATCHING(regex_char_number, pwd) ? YES : NO;
+}
+
++ (BOOL)regex:(NSString *)string set:(NSString *)charSet {
+    NSMutableArray *setChars = [NSMutableArray new];
+    for (NSInteger i = 0; i < charSet.length; i++) {
+        [setChars addObject:[charSet substringWithRange:NSMakeRange(i, 1)]];
+    }
+    NSMutableArray *strChars = [NSMutableArray new];
+    for (NSInteger i = 0; i < string.length; i++) {
+        [strChars addObject:[string substringWithRange:NSMakeRange(i, 1)]];
+    }
+    for (NSString *sc in strChars) {
+        if (![setChars containsObject:sc]) {
+            return NO;
+        }
+    }
+    return YES;
 }
 
 @end

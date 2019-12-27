@@ -10,5 +10,7 @@
 #define DateFormat_h
 
 #import "NSString+DateFormat.h"
+#import "NSDate+DateFormat.h"
+#import "NSDateComponents+DateFormat.h"
 
 #endif /* DateFormat_h */

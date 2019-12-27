@@ -13,12 +13,14 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef void(^MJ_Callback)(void);
+typedef void(^MJ_More_Callback)(void);
 
 @interface TablePage : Page
 
 @property (nonatomic, strong) UITableView *tableView;
 
 @property (nonatomic, copy) MJ_Callback mj_callback;
+@property (nonatomic, copy) MJ_More_Callback mj_more_callback;
 
 //tableView_frame(默认白色)
 - (CGRect)return_tableView_frame;

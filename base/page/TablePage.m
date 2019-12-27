@@ -55,6 +55,26 @@
     self.tableView.mj_header = header;
 }
 
+- (void)setMj_more_callback:(MJ_More_Callback)mj_more_callback {
+    _mj_more_callback = mj_more_callback;
+    MJRefreshBackGifFooter *foot = [MJRefreshBackGifFooter footerWithRefreshingBlock:^{
+        
+        dispatch_queue_t queue =  dispatch_queue_create(0, DISPATCH_QUEUE_CONCURRENT);
+        dispatch_async(queue, ^{
+            if (mj_more_callback) {
+                mj_more_callback();
+            }
+        });
+        //监测到当前线程池前边的线程全部执行完毕
+        dispatch_barrier_async(queue, ^{
+            [self.tableView.mj_footer endRefreshing];
+        });
+        
+    }];
+    
+    self.tableView.mj_footer = foot;    
+}
+
 - (UITableView *)tableView {
     if (_tableView) {
         return _tableView;

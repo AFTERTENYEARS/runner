@@ -12,7 +12,10 @@
 
 @property (nonatomic, strong) UIView *contentView;
 
+@property (nonatomic, strong) UIImageView *icon;
 @property (nonatomic, strong) LightLKButton *backButton;
+@property (nonatomic, strong) UILabel *describeLabel;
+@property (nonatomic, strong) UILabel *subDescribeLabel;
 
 @property (nonatomic, strong) NSTimer *backTimer;
 
@@ -27,7 +30,18 @@
     self.view.backgroundColor = E5E5E5;
     [self.tableView addSubview:self.contentView];
     
-    _leftTime = 3;
+    
+    
+    if (self.describe.length > 0) {
+        UILabel *describeLabel = self.contentView.subviews[1];
+        describeLabel.text = self.describe;
+    }
+    self.subDescribeLabel.text = self.subDescribe;
+    if (self.iconName.length > 0) {
+        self.icon.image = [UIImage imageNamed:self.iconName];
+    }
+    
+    _leftTime = 5;
     
     __weak typeof(self) weakSelf = self;
     [RACObserve(self, leftTime) subscribeNext:^(id  _Nullable x) {
@@ -56,17 +70,28 @@
 }
 
 - (UIView *)return_nav_bar {
-    LKNav *nav = [LKNav backStyleWithTitle:@""];
-    nav.backgroundColor = COLOR(@"fafafa");
-    [nav.backItem setTitle:@"" forState:UIControlStateNormal];
-    [nav.backItem setImage:Image_By_Name(@"current-back-red") forState:UIControlStateNormal];
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(42, Status_Bar_Height, Screen_Width - 42 * 2, Nav_Bar_Height)];
-    titleLabel.textColor = E94F4f;
-    titleLabel.font = [UIFont boldSystemFontOfSize:19];
-    titleLabel.text = @"操作成功";
-    [nav addSubview:titleLabel];
+//    LKNav *nav = [LKNav backStyleWithTitle:@""];
+//    nav.backgroundColor = COLOR(@"fafafa");
+//    [nav.backItem setTitle:@"" forState:UIControlStateNormal];
+//    [nav.backItem setImage:Image_By_Name(@"current-back-red") forState:UIControlStateNormal];
+//    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(42, Status_Bar_Height, Screen_Width - 42 * 2, Nav_Bar_Height)];
+//    titleLabel.textColor = E94F4f;
+//    titleLabel.font = [UIFont boldSystemFontOfSize:19];
+//    titleLabel.text = @"操作成功";
+//    [nav addSubview:titleLabel];
+    
+    NSString *title = @"操作成功";
+    if (self.navTitle.length > 0) {
+        title = self.navTitle;
+    }
+
+    LKNav *nav = [Func navByTitle:title];
     
     return nav;
+}
+
+- (void)dealloc {
+    [self.backTimer invalidate];
 }
 
 - (UIView *)contentView {
@@ -81,5 +106,18 @@
 - (LightLKButton *)backButton {
     return self.contentView.subviews[2];
 }
+
+- (UIImageView *)icon {
+    return self.contentView.subviews[0];
+}
+
+- (UILabel *)describeLabel {
+    return self.contentView.subviews[1];
+}
+
+- (UILabel *)subDescribeLabel {
+    return self.contentView.subviews[3];
+}
+
 
 @end

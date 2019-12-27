@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="VersionUpdateView">
+            <rect key="frame" x="0.0" y="0.0" width="408" height="224"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发现新版本" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCw-1u-ctH">
+                    <rect key="frame" x="153" y="3.5" width="102" height="19.5"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="19.5" id="hwl-ey-HXy"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1.新手大礼包 2.帮助中心 3.新版头像" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6P-VU-5jo">
+                    <rect key="frame" x="25" y="40.5" width="358" height="58.5"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="aPx-4C-YaY">
+                    <rect key="frame" x="17.5" y="140" width="373" height="44"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLX-8i-Xqf" customClass="LightLKButton">
+                            <rect key="frame" x="0.0" y="0.0" width="180.5" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="qGK-wY-CpG"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <state key="normal" title="残忍拒绝">
+                                <color key="titleColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="djJ-Ck-EfR" customClass="DeepLKButton">
+                            <rect key="frame" x="192.5" y="0.0" width="180.5" height="44"/>
+                            <color key="backgroundColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="FCj-ru-y0K"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <state key="normal" title="立即升级">
+                                <color key="titleColor" red="0.98040527109999998" green="0.98036855460000005" blue="0.98039346930000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="X24-2Z-38I"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="0.98040527109999998" green="0.98036855460000005" blue="0.98039346930000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="rCw-1u-ctH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="3.5" id="9TY-ml-7Wn"/>
+                <constraint firstAttribute="trailing" secondItem="aPx-4C-YaY" secondAttribute="trailing" constant="17.5" id="Ivh-S0-gJV"/>
+                <constraint firstAttribute="bottom" secondItem="aPx-4C-YaY" secondAttribute="bottom" constant="40" id="OuY-Qo-cUb"/>
+                <constraint firstItem="rCw-1u-ctH" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="PPW-LL-Fn2"/>
+                <constraint firstItem="aPx-4C-YaY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="17.5" id="h6C-nZ-dgd"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="contentLabel" destination="A6P-VU-5jo" id="DBg-Wm-Hfn"/>
+                <outlet property="refuseButton" destination="cLX-8i-Xqf" id="64n-me-AY1"/>
+                <outlet property="updateNow" destination="djJ-Ck-EfR" id="nLy-Lf-ubb"/>
+            </connections>
+            <point key="canvasLocation" x="58" y="15"/>
+        </view>
+    </objects>
+</document>

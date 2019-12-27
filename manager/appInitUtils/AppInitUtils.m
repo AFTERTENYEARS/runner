@@ -7,18 +7,52 @@
 //
 
 #define WX_APPID @"wx26950a96938f411a"
+#define UNIVERSAL_LINK @"https://www.klz888.com/universallinks/"
+#define ALIYUNPUSH_APP_KEY @"28189588"
+#define ALIYUNPUSH_APP_SECRET @"c7b05a0d2ab7c3bc834002b57ae36680"
 
 #import "AppInitUtils.h"
-#include <WechatOpenSDK/WXApi.h>
+
+#import "VersionUpdate.h"
+#import "WelcomePage.h"
+#import "TabbarPage.h"
+
 
 @implementation AppInitUtils
 
-+ (void)AppInit {
++ (void)AppInit: (NSDictionary *)launchOptions window: (UIWindow *)window {
+    //初始化智能键盘
     [self initIQKeyboardManager];
+    //初始化默认主页面
+    [self initPageDefault:window];
+    //初始化微信SDK
     [self initWX];
+    //初始化阿里云推送
+    [self initCloudPush: launchOptions];
+    //是否需要版本更新
+    ///[VersionUpdate versionUpdate];
+    //刷新个人信息
     if ([UserLoginInfo login]) {
         [UserLoginInfo loadUserInfo];
     }
+}
+
++ (void)initPageDefault: (UIWindow *)window {
+    UINavigationController *tabbarPage = [[UINavigationController alloc] initWithRootViewController:[[TabbarPage alloc] init]];
+    //UINavigationController *loginPage = [[UINavigationController alloc] initWithRootViewController:[[FLoginPage alloc] init]];
+    
+//    //欢迎页
+//    if ([Func needWelcomePage]) {
+//        window.rootViewController = [[WelcomePage alloc] init];
+//    } else {
+//        window.rootViewController = [UserLoginInfo login] ? tabbarPage : loginPage;
+//    }
+    
+    window.rootViewController = tabbarPage;
+    
+    //    window.rootViewController = tabbarPage;
+    //    UINavigationController *vcPage = [[UINavigationController alloc] initWithRootViewController:[[ViewController alloc] init]];
+    //    window.rootViewController = vcPage;
 }
 
 + (void)initIQKeyboardManager {
@@ -35,7 +69,30 @@
 }
 
 + (void)initWX {
-    [WXApi registerApp:WX_APPID universalLink:@"https://www.yuecgroup.com/"];
+    //[WXApi registerApp:WX_APPID universalLink:UNIVERSAL_LINK];
 }
+
++ (void)initCloudPush:(NSDictionary *)launchOptions {
+    // SDK初始化
+//    [CloudPushSDK asyncInit:ALIYUNPUSH_APP_KEY appSecret:ALIYUNPUSH_APP_SECRET callback:^(CloudPushCallbackResult *res) {
+//        if (res.success) {
+//            //NSLog(@"Push SDK init success, deviceId: %@.", [CloudPushSDK getDeviceId]);
+//        } else {
+//            //NSLog(@"Push SDK init failed, error: %@", res.error);
+//        }
+//    }];
+//    
+//    UIApplication *application = [UIApplication sharedApplication];
+//    
+//    [application registerUserNotificationSettings:
+//     [UIUserNotificationSettings settingsForTypes:
+//      (UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge)
+//                                       categories:nil]];
+//    [application registerForRemoteNotifications];
+//    //阿里云通知打开监听
+//    [CloudPushSDK sendNotificationAck:launchOptions];
+}
+
+
 
 @end

@@ -31,6 +31,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)request:(NetWorkType)type url:(NSString *)url parameters:(id _Nullable)parameters progress:(DownloadProgress  _Nullable)progress loading:(Loading)loading netCallBack: (NetCallBack)netCallBack;
 
++ (void)cancel;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -185,7 +185,6 @@
     CGRect backViewFrame = CGRectMake(progress * button_w, _markView.y, button_w, _markView.height);
     CGRect markFrame = CGRectMake(backViewFrame.origin.x + (button_w - _markView.width) / 2.0 , _markView.y, _markView.width, _markView.height);
     _markView.frame = markFrame;
-    
 }
 
 

@@ -1,7 +1,10 @@
 
 source 'https://github.com/CocoaPods/Specs.git'
 
+source 'https://github.com/aliyun/aliyun-specs.git'
+
 #source 'https://github.com/Artsy/Specs.get'
+
 
 
 platform :ios, '9.0'
@@ -18,7 +21,6 @@ target 'runner' do
   pod 'SVProgressHUD'
 	pod 'IQKeyboardManager'
 	pod 'ReactiveObjC'
-  pod 'AlipaySDK-iOS'
-  pod 'WechatOpenSDK'
+  pod 'PGDatePicker'
 
 end

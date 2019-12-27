@@ -36,4 +36,7 @@
 #define Step_3 @"caigou-over"
 
 
+#define Notification_ReceiveMsg @"receiveMsg"
+
+
 #endif /* DefineDoc_h */

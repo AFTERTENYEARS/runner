@@ -14,7 +14,7 @@ NSTimer *timer;
 NSInteger leftTime;
 EndBlock theEndBlock;
 
-UIView *blockView;
+static UIView *blockView;
 
 @interface LKLoadingView()<CAAnimationDelegate>
 @property (nonatomic,weak)UIView *round1;
@@ -68,13 +68,14 @@ UIView *blockView;
 //    [[[UIApplication sharedApplication] keyWindow] addSubview:blockView];
     
     [LKLoadingView dismiss];
-    
+    //加载到当前view上
     dispatch_async(dispatch_get_main_queue(), ^{
-        blockView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height)];
-        [blockView addSubview:[self GIF]];
+        if (!blockView) {
+            blockView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height)];
+            [blockView addSubview:[self GIF]];
+        }
         blockView.userInteractionEnabled = NO;
-        
-        [[[UIApplication sharedApplication] keyWindow] addSubview:blockView];
+        [[Func currentVC].view addSubview:blockView];
     });
         
     
@@ -94,16 +95,17 @@ UIView *blockView;
 //    [[[UIApplication sharedApplication] keyWindow] addSubview:blockView];
     
     [LKLoadingView dismiss];
-    
+    //加载到keyWindow上屏蔽用户操作
     dispatch_async(dispatch_get_main_queue(), ^{
-        blockView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height)];
+        if (!blockView) {
+            blockView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height)];
+            [blockView addSubview:[self GIF]];
+        }
+        
         blockView.backgroundColor = COLOR_ALPHA(UIColor.blackColor, 0.2);
-        [blockView addSubview:[self GIF]];
 
         [[[UIApplication sharedApplication] keyWindow] addSubview:blockView];
     });
-    
-    
 }
 
 + (void)dismiss {
@@ -319,7 +321,7 @@ UIView *blockView;
     }
     imageView.image = images[0];
     imageView.animationImages = images;
-    imageView.animationDuration = 0.3;
+    imageView.animationDuration = 0.5;
     imageView.animationRepeatCount = 0;
     
     [imageView startAnimating];

@@ -32,7 +32,14 @@
  *  x年
  */
 @property(nonatomic,copy,readonly)NSString *l_formatNian;
-
+/**
+*  x月
+*/
+@property(nonatomic,copy,readonly)NSString *l_formatYue;
+/**
+*  x日
+*/
+@property(nonatomic,copy,readonly)NSString *l_formatRi;
 /**
  *  x时x分x秒
  */

@@ -44,7 +44,7 @@
 
 - (void)setMsg:(NSString *)msg {
     if (Is_Null(msg)) {
-        _msg = @"";
+        _msg = @"未知异常";
     } else {
         _msg = msg;
     }

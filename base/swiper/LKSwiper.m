@@ -78,9 +78,9 @@
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.scrollView.width * i, 0, self.scrollView.width, self.scrollView.height)];
         imageView.contentMode = UIViewContentModeScaleAspectFill;
         imageView.clipsToBounds = YES;
-        imageView.backgroundColor = COLOR_RANDOM;
+        //imageView.backgroundColor = COLOR_RANDOM;
         if (_isUrl) {
-            [imageView sd_setImageWithURL:[NSURL URLWithString:self.imageList[i]]];
+            [imageView sd_setImageWithURL:[NSURL URLWithString:self.imageUrlList[i]]];
         } else {
             imageView.image = [UIImage imageNamed:self.imageList[i]];
         }
@@ -94,7 +94,7 @@
     }
     
     self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, self.height - 30, self.width, 30)];
-    self.pageControl.numberOfPages = self.imageList.count;
+    self.pageControl.numberOfPages = _isUrl ? self.imageUrlList.count : self.imageList.count;
     self.pageControl.userInteractionEnabled = NO;
     [self addSubview:self.pageControl];
     
@@ -119,13 +119,24 @@
 
 - (void)pageUp {
     NSInteger current = self.scrollView.contentOffset.x / self.scrollView.width;
-    if (current == self.imageList.count - 1) {
+
+    NSInteger count = _isUrl ? self.imageUrlList.count : self.imageList.count;
+    
+    //LKDLog(@"count: %ld", count);
+
+    if (current == count - 1) {
         self.increment = -1;
     } else if (current == 0) {
         self.increment = 1;
     }
     NSInteger toIndex = current + self.increment;
     
+    if (count <= 1) {
+        toIndex = 0;
+    }
+    
+    //LKDLog(@"toIndex: %ld", toIndex);
+
     [UIView animateWithDuration:0.3 animations:^{
         self.scrollView.contentOffset = CGPointMake(self.width * toIndex, 0);
     } completion:^(BOOL finished) {

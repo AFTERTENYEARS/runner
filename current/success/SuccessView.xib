@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -14,26 +14,26 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="current-success" translatesAutoresizingMaskIntoConstraints="NO" id="h7i-Mf-DFH">
-                    <rect key="frame" x="177" y="225.5" width="60.5" height="60.5"/>
+                    <rect key="frame" x="177" y="88" width="60.5" height="60.5"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60.5" id="1Tx-61-lph"/>
                         <constraint firstAttribute="width" constant="60.5" id="cBs-Ze-wLG"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="操作成功" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgM-wY-eGC">
-                    <rect key="frame" x="168" y="311.5" width="78" height="23"/>
+                    <rect key="frame" x="168" y="174" width="78" height="23"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f9c-KN-BcR" customClass="LightLKButton">
-                    <rect key="frame" x="137" y="411.5" width="140" height="34"/>
+                    <rect key="frame" x="137" y="274" width="140" height="34"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="140" id="LUk-PI-rau"/>
                         <constraint firstAttribute="height" constant="34" id="hKY-kK-Uci"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <state key="normal" title="3s后返回...">
+                    <state key="normal" title="5s后返回...">
                         <color key="titleColor" red="0.91474622490000002" green="0.3098698258" blue="0.31139108539999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <userDefinedRuntimeAttributes>
@@ -42,15 +42,23 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我们会在24小时内，将款打到你的账户" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMx-Jx-CT8">
+                    <rect key="frame" x="84.5" y="226" width="245.5" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.72151237729999995" green="0.72160023449999999" blue="0.72148245570000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="BMx-Jx-CT8" firstAttribute="top" secondItem="hgM-wY-eGC" secondAttribute="bottom" constant="29" id="5CO-Gj-jRR"/>
+                <constraint firstItem="h7i-Mf-DFH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="88" id="9xs-Z2-eE1"/>
                 <constraint firstItem="f9c-KN-BcR" firstAttribute="top" secondItem="hgM-wY-eGC" secondAttribute="bottom" constant="77" id="VTN-rJ-2aj"/>
                 <constraint firstItem="f9c-KN-BcR" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ab1-Pt-DVg"/>
                 <constraint firstItem="hgM-wY-eGC" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="gST-bT-ocH"/>
+                <constraint firstItem="BMx-Jx-CT8" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="kxR-TH-TD0"/>
                 <constraint firstItem="hgM-wY-eGC" firstAttribute="top" secondItem="h7i-Mf-DFH" secondAttribute="bottom" constant="25.5" id="l7Z-WL-eKj"/>
                 <constraint firstItem="h7i-Mf-DFH" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="qez-dJ-1S1"/>
-                <constraint firstItem="hgM-wY-eGC" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-77" id="uxZ-0I-r81"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="139" y="154"/>

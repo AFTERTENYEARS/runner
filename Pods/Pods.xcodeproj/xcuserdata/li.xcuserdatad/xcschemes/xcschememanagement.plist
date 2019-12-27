@@ -9,11 +9,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>AlipaySDK-iOS.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>IQKeyboardManager.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -25,6 +20,16 @@
 			<false/>
 		</dict>
 		<key>Masonry.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>PGDatePicker.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>PGPickerView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -45,11 +50,6 @@
 			<false/>
 		</dict>
 		<key>SVProgressHUD.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>WechatOpenSDK.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

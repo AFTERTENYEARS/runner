@@ -76,7 +76,7 @@
     netValue.body = responseObject;
     if (netValue.code == -1) {
         //这里要跳转登录页面
-        netValue.msg = @"登录信息已过期，请重新登录...";
+        netValue.msg = String_By_Obj(responseObject, @"msg");//@"登录信息已过期，请重新登录...";
         [Func switchToLoginPage];
     } else {
         netValue.msg = String_By_Obj(responseObject, @"msg");// netValue.code == 0 ? String_By_Obj(responseObject, @"msg") : @"";
@@ -123,12 +123,9 @@
 }
 
 + (AFHTTPSessionManager * _Nonnull)RequestManager {
-    AFHTTPSessionManager *manager;
-    manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:BASE_URL]];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    
+    AFHTTPSessionManager *manager = [NetWork shareManager];
     manager.requestSerializer.timeoutInterval = 15.0f;
-    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     if ([UserLoginInfo login]) {
         [manager.requestSerializer setValue:[UserLoginInfo token] forHTTPHeaderField:@"RetailToken"];
     }
@@ -136,6 +133,25 @@
     return manager;
 }
 
+//单例模式
++ (AFHTTPSessionManager *)shareManager;
+{
+    static dispatch_once_t once;
+    static AFHTTPSessionManager *manager;
+    dispatch_once(&once, ^{
+        manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:BASE_URL]];
+        manager.responseSerializer = [AFJSONResponseSerializer serializer];
+        manager.requestSerializer = [AFJSONRequestSerializer serializer];
+        [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    });
+    return manager;
+}
+
++ (void)cancel {
+    if ([NetWork RequestManager].tasks.count > 0) {
+        [[NetWork RequestManager].tasks makeObjectsPerformSelector:@selector(cancel)];
+    }
+}
 
 /*
  + (AFHTTPSessionManager * _Nonnull)RequestManager {

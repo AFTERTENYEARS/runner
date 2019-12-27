@@ -10,6 +10,14 @@
 
 @implementation DeepLKButton
 
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self customNormalColor:COLOR(@"E8495B") highLightedColor:COLOR(@"C93E4F") disabledColor:COLOR(@"F98794") titleNormalColor:COLOR(@"FAFAFA") titleHilightedColor:COLOR(@"FAFAFA")];
+    }
+    return self;
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.layer.masksToBounds = YES;

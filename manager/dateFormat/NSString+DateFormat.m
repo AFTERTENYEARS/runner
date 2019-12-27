@@ -30,6 +30,16 @@
     NSDate *date = [NSDate l_dateWithDateString:self];
     return [NSString stringWithFormat:@"%ld年",date.year];
 }
+-(NSString *)l_formatYue
+{
+    NSDate *date = [NSDate l_dateWithDateString:self];
+    return [NSString stringWithFormat:@"%ld月",date.month];
+}
+-(NSString *)l_formatRi
+{
+    NSDate *date = [NSDate l_dateWithDateString:self];
+    return [NSString stringWithFormat:@"%ld日",date.day];
+}
 -(NSString *)l_formatShiFenMiao
 {
     NSDate *date = [NSDate l_dateWithDateString:self];

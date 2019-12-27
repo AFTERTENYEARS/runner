@@ -66,6 +66,10 @@
     if(date) return date;
     date = [self l_dateWithFormat_yyyy_MM_string:dateString];
     if(date) return date;
+    date = [self l_dateWithFormat_yyyy_MM_dd__HH_mm_ss_0string:dateString];
+    if(date) return date;
+    date = [self l_dateWithFormat_yyyy_MM_dd__HH_mm_ss_00000string:dateString];
+    if(date) return date;
     return nil;
 }
 
@@ -113,6 +117,23 @@
 {
     NSDateFormatter* dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"yyyy-MM"];
+    NSDate *date =[dateFormat dateFromString:string];
+    return date;
+}
+
++(NSDate *)l_dateWithFormat_yyyy_MM_dd__HH_mm_ss_0string:(NSString *)string
+{
+    NSDateFormatter* dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss.s"];
+    NSDate *date =[dateFormat dateFromString:string];
+    return date;
+}
+
+//2019-12-07 09:10:22 +0000
++(NSDate *)l_dateWithFormat_yyyy_MM_dd__HH_mm_ss_00000string:(NSString *)string
+{
+    NSDateFormatter* dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss +ssss"];
     NSDate *date =[dateFormat dateFromString:string];
     return date;
 }

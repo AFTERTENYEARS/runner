@@ -148,6 +148,14 @@
         CGFloat picImageViewX = (2 * i + 1) * self.halfGap + i * picImageViewWidth;
         CGFloat picImageViewY = (self.frame.size.height - picImageViewHeight) / 2;
         
+        ////////测试
+        picImageView.contentMode = UIViewContentModeScaleAspectFill;
+        //self.scrollView.backgroundColor = UIColor.brownColor;
+        picImageViewWidth = self.scrollView.frame.size.width - 2 * self.halfGap;
+        picImageViewHeight = self.scrollView.frame.size.height;
+        picImageViewX = (2 * i + 1) * self.halfGap + i * picImageViewWidth;
+        picImageViewY = 0;
+        
         picImageView.frame = CGRectMake(picImageViewX, picImageViewY, picImageViewWidth, picImageViewHeight);
         
         //设置图片

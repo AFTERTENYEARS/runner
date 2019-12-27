@@ -36,9 +36,38 @@ typedef void(^PwdCallback)(NSString *pwd);
 
 + (void)sdUrlImage:(UIImageView *)imageView url: (NSString *)url;
 
++ (NSString *)fullurl: (NSString *)url;
+
 + (void)switchToLoginPage;
 
 + (void)switchTarbarPage;
+
++ (BOOL)needWelcomePage;
+
++ (NSString *)inviteUrl;
+
++ (NSString *)secureName:(NSString *)name;
+
++ (NSString *)secureMobile:(NSString *)mobile;
+
++ (NSString *)bankTail:(NSString *)bankcard;
+
++ (BOOL)realName;
+
++ (void)switchToAuthPage;
+
++ (BOOL)withdrawpwd;
+
++ (void)switchToSetWithdrawPwd;
+
++ (NSString *)MD5:(NSString *)string;
+
++ (void)removeLastVC:(UINavigationController *)navigationController;
+
++ (BOOL)pwdLimit:(NSString *)pwd;
+
++ (BOOL)regex:(NSString *)string set:(NSString *)charSet;
+
 
 @end
 

@@ -12,6 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SuccessPage : TablePage
 
+@property (nonatomic, strong) NSString *iconName;
+@property (nonatomic, strong) NSString *navTitle;
+@property (nonatomic, strong) NSString *describe;
+@property (nonatomic, strong) NSString *subDescribe;
+
 @end
 
 NS_ASSUME_NONNULL_END
